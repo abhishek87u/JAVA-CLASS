@@ -1,0 +1,46 @@
+
+import java.util.Scanner;
+
+abstract class Softwares { // Abstract class
+    String Pnumber;
+    String otp;
+
+    void user_input() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter pnumber:");
+        Pnumber = s.nextLine();
+        System.out.println("Enter otp:");
+        otp = s.nextLine();
+    }
+
+    void user_login() {
+        System.out.println("WELCOME TO WHATSAPP:");
+        System.out.println("................");
+        System.out.println("Please login here:");
+    }
+
+    abstract void app_open(); // Abstract method
+}
+
+class Instagram extends Softwares { // Child class
+    void app_open() {
+        while (true) {
+            if (Pnumber.equals("123456789") && otp.equals("123")) {
+                System.out.println("Successfully Login, App is open");
+                break;
+            } else {
+                System.out.println("Invalid otp. Please retry.");
+                user_input();
+            }
+        }
+    }
+}
+
+public class Apps2 {
+    public static void main(String[] args) {
+        Instagram i = new Instagram();
+        i.user_input();
+        i.user_login();
+        i.app_open();
+    }
+}
