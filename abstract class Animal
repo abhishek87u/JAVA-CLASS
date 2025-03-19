@@ -1,0 +1,29 @@
+
+
+// Abstract class Animal
+abstract class Animal {
+    abstract void sound(); // Abstract method
+}
+
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("BOW BOW....!!");
+    }
+}
+ 
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Meow Meow....!!");
+    }
+} 
+
+public class Abstraction {
+    public static void main(String[] args) {
+        Dog d = new Dog(); // Create an instance of Dog
+        d.sound(); // Call the sound method
+        Cat c = new Cat();
+        c.sound();
+    }
+}
